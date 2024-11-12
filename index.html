@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق الحصالة الاحترافي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- نافذة الترحيب -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>مرحباً بك في تطبيق الحصالة!</h2>
+            <p>نحن هنا لمساعدتك في تحقيق أهدافك في الادخار. دعنا نبدأ معًا!</p>
+            <button onclick="startSavings()">ابدأ الآن</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>تطبيق الحصالة الاحترافي</h1>
+        <p>حدد المبلغ اليومي وعدد الأيام لتحقيق هدف الادخار.</p>
+        
+        <div class="input-section">
+            <label for="dailyAmount">المبلغ اليومي (جنيه):</label>
+            <input type="number" id="dailyAmount" placeholder="ادخل المبلغ اليومي" min="0" value="0">
+            
+            <label for="totalDays">عدد الأيام:</label>
+            <input type="number" id="totalDays" placeholder="ادخل عدد الأيام" min="0" value="0">
+            
+            <button onclick="startSavings()" class="btn">بدء الادخار</button>
+        </div>
+        
+        <div class="balance-section">
+            <p>اليوم الحالي: <span id="day">0</span></p>
+            <p>الإجمالي المدخر: <span id="totalSavings">0</span> جنيه</p>
+            <p>المتبقي لتحقيق الهدف: <span id="remainingAmount">0</span> جنيه</p>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <button onclick="addSavings()" class="btn">إضافة المبلغ اليومي</button>
+        <button onclick="resetSavings()" class="btn reset">إعادة تعيين</button>
+
+        <div id="celebrationMessage" class="celebration hidden">
+            🎉 مبروك! لقد أكملت الهدف بنجاح! 🎉
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
